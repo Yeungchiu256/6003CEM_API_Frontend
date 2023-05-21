@@ -20,7 +20,7 @@ const NewArticle = () =>{
       console.log(values, t, c);
       const postArticle = {
         title: t,
-        allText: c,
+        alltext: c,
         authorID: 1
       }
       // Post request
