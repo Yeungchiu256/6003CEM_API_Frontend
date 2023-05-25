@@ -9,8 +9,8 @@ import Dashboard from './components/Dashboard'
 import About from './components/About'
 import DetailArticle from './components/DetailArticles'
 import Article from './components/Articles'
-import NewArticle from './components/NewArticles'
-
+import NewCat from './components/NewCat'
+import Catimage from './components/Catimage';
 
 import { Layout, Space } from 'antd';
 import './App.css';
@@ -28,24 +28,29 @@ const App = () => {
           <Space>
             <Link to="/">Home</Link>
             <Link to="/dashboard">Dashboard</Link>
-            <Link to="/about">About</Link>
             <Link to="/Article">Article</Link>
             <Link to="/DetailArticles">DetailArticle</Link>
-            <Link to="/Newarticles">New Article</Link>
+            <Link to="/NewCat">New Cat</Link>
           </Space>
         </nav>
       </Header>
       <Content>
         <Routes>
-          <Route index element={<NewArticle />} /> //<Route index element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route index element={<Home />} /> 
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/Article" element={<Article />} />
-          <Route path="/Newarticles" element={<NewArticle />} />
+          <Route path="/NewCat" element={<NewCat />} />
           <Route path="/DetailArticles" element={<DetailArticle />} />
         </Routes>
       </Content>
-      <Footer><p>VT6003CEM Demo</p></Footer>
+      <Footer>
+        <p>
+          <h2>
+            <span style={{ fontWeight: 'bold' }}>The Pet Shelter Offical App</span>
+          </h2>
+        </p>
+        <p>Shelter cat matching service</p>
+      </Footer>
     </Router>
   );
 }

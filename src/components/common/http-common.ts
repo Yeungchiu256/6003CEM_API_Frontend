@@ -1,4 +1,4 @@
 export const api = {
-  uri: "https://BscComLab062023.yeungchiu256.repl.co"
+  uri: "https://6003cemapibackend.yeungchiu256.repl.co"
   
 }

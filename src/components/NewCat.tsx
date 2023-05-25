@@ -3,10 +3,11 @@ import { Form, Input, Button } from 'antd';
 import {api} from './common/http-common';
 import axios from 'axios';
 import {Buffer} from 'buffer';
+import Catimage from './Catimage';
 
 const { TextArea } = Input;
 
-const NewArticle = () =>{
+const NewCat: React.FC = () =>{
     const username = "alice";
     const password = "abc123";
     // Create token by username:password
@@ -15,13 +16,16 @@ const NewArticle = () =>{
     localStorage.setItem('atoken', access_token);
 
     const handleFormSubmit = (values: any) => {
-      const t = values.title;
-      const c = values.context;
+      const t = values.catname;
+      const c = values.catremark;
+      const s = values.sheltercode;
       console.log(values, t, c);
       const postArticle = {
-        title: t,
-        alltext: c,
-        authorID: 1
+        catname: t,
+        catremark: c,
+        staffid: 1, //  Please add staffID into table!!!, check by token?
+        sheltercode: HK01 //note to consider more
+        
       }
       // Post request
     axios.post(`${api.uri}/api/v1/articles`, postArticle, {
@@ -43,19 +47,41 @@ const NewArticle = () =>{
   
   
   return (
-    <Form name="article" onFinish={(values) => handleFormSubmit(values)}>
-      <Form.Item name="title" label="Title" rules={contentRules}>
+    <Form name="Newcat" labelCol= {{ span:6 }} onFinish={(values) => handleFormSubmit(values)}>
+      <br></br>
+      <Form.Item name="catname" label="Cat Name" rules={contentRules}>
         <Input />
       </Form.Item>
-      <Form.Item name="context" label="Context" rules={contentRules}>
-        <TextArea rows={4} />
+      <br></br>
+      
+
+      <Form.Item name="sheltercode" label="Location (Shelter Code)" rules={contentRules}>
+        <Input />
       </Form.Item>
+      <br></br>
+      
+      <Form.Item name="catremark" label="Cat Remark" rules={contentRules}>
+        <TextArea rows={3} />
+        
+      </Form.Item>
+
+
+
+      <Form.Item name="catimage" label="Cat image">
+        <div align="left">
+          <Catimage />
+        </div>
+        
+      </Form.Item>
+      
       <Form.Item>
         <Button type="primary" htmlType="submit">Submit</Button>         
       </Form.Item>
-      </Form>
+      <br></br>
+      
+    </Form>
   );
 }
 
 
-export default NewArticle;
+export default NewCat;
