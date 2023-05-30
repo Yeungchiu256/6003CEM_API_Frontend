@@ -19,7 +19,8 @@ const NewCat: React.FC = () =>{
       const t = values.catname;
       const c = values.catremark;
       const s = values.sheltercode;
-      console.log(values, t, c);
+      const u = values.uploadURL;
+      console.log(values, t, c,s);
       const postArticle = {
         catname: t,
         catremark: c,

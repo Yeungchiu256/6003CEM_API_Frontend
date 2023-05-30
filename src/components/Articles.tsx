@@ -49,3 +49,18 @@ const Article = () => {
   } 
 }
 export default Article;
+
+===============
+
+      <div>
+      <Upload
+        fileList={file ? [{ uid: '1', name: file.name, status: 'done', originFileObj: file }] : []}
+        onChange={handleFileChange}
+        showUploadList={{ showRemoveIcon: true}}
+      >
+        <Button icon={<UploadOutlined />}>Select File</Button>
+      </Upload>
+      <Button type="primary" onClick={handleUpload}>
+        Upload
+      </Button>
+    </div>

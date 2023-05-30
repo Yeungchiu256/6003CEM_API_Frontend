@@ -7,10 +7,10 @@ import React from 'react'
 import Home from './components/Home'
 import Dashboard from './components/Dashboard'
 import About from './components/About'
-import DetailArticle from './components/DetailArticles'
-import Article from './components/Articles'
+//import DetailArticle from './components/DetailArticles'
+//import Article from './components/Articles'
+import Cat from './components/Cat'
 import NewCat from './components/NewCat'
-import Catimage from './components/Catimage';
 
 import { Layout, Space } from 'antd';
 import './App.css';
@@ -27,9 +27,7 @@ const App = () => {
         <nav>
           <Space>
             <Link to="/">Home</Link>
-            <Link to="/dashboard">Dashboard</Link>
-            <Link to="/Article">Article</Link>
-            <Link to="/DetailArticles">DetailArticle</Link>
+            <Link to="/Cat">Cat</Link>
             <Link to="/NewCat">New Cat</Link>
           </Space>
         </nav>
@@ -37,10 +35,8 @@ const App = () => {
       <Content>
         <Routes>
           <Route index element={<Home />} /> 
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/Article" element={<Article />} />
+          <Route path="/Cat" element={<Cat />} />
           <Route path="/NewCat" element={<NewCat />} />
-          <Route path="/DetailArticles" element={<DetailArticle />} />
         </Routes>
       </Content>
       <Footer>
@@ -54,6 +50,12 @@ const App = () => {
     </Router>
   );
 }
+
+//            <Link to="/dashboard">Dashboard</Link>
+//            <Link to="/DetailArticles">DetailArticle</Link>
+//          <Route path="/DetailArticles" element={<DetailArticle />} />
+//          <Route path="/dashboard" element={<Dashboard />} />
+
 
 export default App;
 
